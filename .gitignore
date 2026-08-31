@@ -1,0 +1,51 @@
+```
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.userprefs
+*.cache
+*.suo
+*.user
+*.aps
+*.ncb
+*.obj
+*.log
+*.nupkg
+*.snupkg
+
+# Dependencies
+packages/
+node_modules/
+
+# Configuration
+app.config
+web.config
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+._*
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+*.userprefs
+[Tt]emporary[Tt]est[Dd]irectory/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Dd]ebug/
+**/[Rr]elease/
+**/[Dd]ebugPublic/
+**/[Rr]eleasePublic/
+```

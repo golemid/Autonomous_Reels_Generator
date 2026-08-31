@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <AssemblyName>AutonomousReelsGenerator</AssemblyName>
+    <RootNamespace>AutonomousReelsGenerator</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Autonomous Reels Team</Authors>
+    <Company>Autonomous Reels</Company>
+    <Product>Autonomous Reels Generator</Product>
+    <Description>AI-powered video generation tool for creating short-form content</Description>
+    
+    <!-- Publishing settings for single executable -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ML.NET for AI integration -->
+    <PackageReference Include="Microsoft.ML" Version="3.0.1" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.17.0" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu" Version="1.17.0" />
+    
+    <!-- Video processing -->
+    <PackageReference Include="FFMpegCore" Version="5.1.0" />
+    
+    <!-- Image processing -->
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
+    <PackageReference Include="SkiaSharp" Version="2.88.7" />
+    
+    <!-- Audio processing -->
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    
+    <!-- Dependency Injection -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    
+    <!-- Logging -->
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    
+    <!-- Async utilities -->
+    <PackageReference Include="System.Threading.Channels" Version="8.0.0" />
+    
+    <!-- JSON handling -->
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
+    
+    <!-- Progress reporting -->
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- FFmpeg native binaries will be bundled separately -->
+    <None Update="ffmpeg\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
